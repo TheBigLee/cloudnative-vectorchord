@@ -97,7 +97,6 @@ jobs:
             latest=false
           images: |
             name=ghcr.io/${{ github.repository }}
-            name=TheBigLee/cloudnative-vectorchord
           tags: |
             type=raw,value=${{ matrix.cnpg }}-vectorchord${{ matrix.vectorchord }}-pgvector${{ matrix.pgvector}},enable=${{ steps.should-release.outputs.result }}
             type=raw,value=${{ steps.version.outputs.pg_major }}--vectorchord${{ matrix.vectorchord }}-pgvector${{ matrix.pgvector}},enable=${{ steps.should-release.outputs.result }}
