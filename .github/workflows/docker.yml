@@ -99,8 +99,8 @@ jobs:
             name=ghcr.io/${{ github.repository }}
             name=TheBigLee/cloudnative-vectorchord
           tags: |
-            type=raw,value=${{ matrix.cnpg }}-${{ matrix.vectorchord }},enable=${{ steps.should-release.outputs.result }}
-            type=raw,value=${{ steps.version.outputs.pg_major }}-${{ matrix.vectorchord }},enable=${{ steps.should-release.outputs.result }}
+            type=raw,value=${{ matrix.cnpg }}-vectorchord${{ matrix.vectorchord }}-pgvector${{ matrix.pgvector}},enable=${{ steps.should-release.outputs.result }}
+            type=raw,value=${{ steps.version.outputs.pg_major }}--vectorchord${{ matrix.vectorchord }}-pgvector${{ matrix.pgvector}},enable=${{ steps.should-release.outputs.result }}
             type=raw,value=${{ matrix.cnpg }},enable=${{ steps.should-release.outputs.result }}
             type=raw,value=${{ steps.version.outputs.pg_major }},enable=${{ steps.should-release.outputs.result }}
 
@@ -117,6 +117,7 @@ jobs:
           build-args: |
             CNPG_TAG=${{ matrix.cnpg }}
             VECTORCHORD_TAG=${{ matrix.vectorchord }}
+            PGVECTORS_TAG=${{ matrix.pgvectors}}
 
   results:
       if: ${{ always() }}
