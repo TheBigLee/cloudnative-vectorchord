@@ -3,6 +3,7 @@ cnpg:
   - "16.5"
 vectorchord:
   # renovate: datasource=github-releases depName=tensorchord/VectorChord
+  - "0.3.0"
   - "0.4.2"
 pgvector:
   # renovate: datasource=github-releases depName=tensorchord/pgvecto.rs
